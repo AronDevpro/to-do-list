@@ -281,11 +281,17 @@ body {
     .task, .tasks {
         width: 90%;
     }
+    .card {
+        width: 90%;
+    }
 }
 
 /* For medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .task, .tasks {
         width: 60%;
+    }
+    .card {
+        width: 70%;
     }
 }
