@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+<nav class="nav-bar">
+    <h1>To do list</h1>
+    <button type="button" class="logout" onclick="logout()">Logout</button>
+</nav>
+<hr>
+<div class="container">
+    <div class="inner-wrapper">
+    <form class="task" id="task">
+        <div class="priority-options" id="priority-group">
+            <label>
+                <input type="radio" name="priority" value="low" hidden>
+                <span class="priority-option low"></span>
+            </label>
+            <label>
+                <input type="radio" name="priority" value="medium" hidden checked>
+                <span class="priority-option medium"></span>
+            </label>
+            <label>
+                <input type="radio" name="priority" value="high" hidden>
+                <span class="priority-option high"></span>
+            </label>
+        </div>
+
+        <label for="title" hidden>Title</label>
+        <input type="text" name="title" id="title" placeholder="Add task" class="title">
+
+        <div class="icon-container">
+            <label for="date" hidden>Due</label>
+            <input type="date" name="date" id="date">
+            <i class="fas fa-calendar-alt" onclick="document.getElementById('date').showPicker();"></i>
+        </div>
+
+    <input type="submit" value="Add" class="add-button">
+    </form>
+    </div>
+</div>
+
+<div class="container"></div>
+
+<!-- Modal -->
+<div id="updateModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form class="update-task" id="updateForm">
+
+            <div class="priority-options" id="updatePriority">
+                <label>
+                    <input type="radio" name="updatePriority" value="low" hidden>
+                    <span class="priority-option low"></span>
+                </label>
+                <label>
+                    <input type="radio" name="updatePriority" value="medium" hidden>
+                    <span class="priority-option medium"></span>
+                </label>
+                <label>
+                    <input type="radio" name="updatePriority" value="high" hidden>
+                    <span class="priority-option high"></span>
+                </label>
+            </div>
+
+            <label for="updateTitle" hidden>Title</label>
+            <input type="text" id="updateTitle" name="updateTitle" placeholder="Update task" class="title">
+
+            <div class="icon-container">
+                <label for="date" hidden>Due</label>
+                <input type="date" name="updateDate" id="updateDate">
+                <i class="fas fa-calendar-alt" onclick="document.getElementById('updateDate').showPicker();"></i>
+            </div>
+
+            <input type="submit" value="Update Task" class="add-button">
+        </form>
+    </div>
+</div>
+
+
+<script src="assets/js/index.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
